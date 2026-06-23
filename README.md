@@ -1,4 +1,4 @@
-# my_first_app
+# FitFlow
 
 A new Flutter project.
 
