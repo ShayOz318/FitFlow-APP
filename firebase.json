@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "source": "functions"
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "flutter": {"platforms":{"android":{"default":{"projectId":"fitflow-cd332","appId":"1:204271193117:android:0b2a591f57439500488af4","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"fitflow-cd332","appId":"1:204271193117:ios:e7dfca1cd2383b3c488af4","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"fitflow-cd332","appId":"1:204271193117:ios:e7dfca1cd2383b3c488af4","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"fitflow-cd332","configurations":{"android":"1:204271193117:android:0b2a591f57439500488af4","ios":"1:204271193117:ios:e7dfca1cd2383b3c488af4","macos":"1:204271193117:ios:e7dfca1cd2383b3c488af4","web":"1:204271193117:web:72ef49f9e3bc07ed488af4","windows":"1:204271193117:web:d6f9c10fa7ac836a488af4"}}}}}}

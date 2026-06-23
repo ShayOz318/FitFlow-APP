@@ -1,0 +1,4 @@
+enum MenuType {
+  weekday,
+  weekend,
+}

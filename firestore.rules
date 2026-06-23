@@ -1,0 +1,45 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function traineeInvite() {
+      return get(/databases/$(database)/documents/traineeInvites/$(request.auth.token.email));
+    }
+
+    function isClaimedTrainee(coachId, traineeId) {
+      return request.auth != null &&
+        traineeInvite().data.coachId == coachId &&
+        traineeInvite().data.traineeId == traineeId &&
+        traineeInvite().data.claimedByUid == request.auth.uid;
+    }
+
+    match /traineeInvites/{emailKey} {
+      allow read: if request.auth != null && (
+        emailKey == request.auth.token.email ||
+        resource.data.coachId == request.auth.uid
+      );
+      allow create: if request.auth != null &&
+        request.auth.uid == request.resource.data.coachId;
+      allow update: if request.auth != null && (
+        request.auth.uid == resource.data.coachId ||
+        (emailKey == request.auth.token.email &&
+         request.resource.data.claimedByUid == request.auth.uid)
+      );
+      allow delete: if request.auth != null &&
+        request.auth.uid == resource.data.coachId;
+    }
+
+    match /coaches/{coachId} {
+      allow read, write: if request.auth != null && request.auth.uid == coachId;
+
+      match /trainees/{traineeId} {
+        allow read, write: if request.auth != null && request.auth.uid == coachId;
+        allow read, update: if isClaimedTrainee(coachId, traineeId);
+      }
+
+      match /customFoods/{foodId} {
+        allow read, write: if request.auth != null && request.auth.uid == coachId;
+      }
+    }
+  }
+}

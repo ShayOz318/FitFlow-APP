@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "204271193117",
+    "project_id": "fitflow-cd332",
+    "storage_bucket": "fitflow-cd332.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204271193117:android:0b2a591f57439500488af4",
+        "android_client_info": {
+          "package_name": "com.example.my_first_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204271193117-qfslq1ieo5q21ujpqhhfus7k4iooahro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnN0B7RwOZWj55a14jTAToGsAEm1uY73k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204271193117-qfslq1ieo5q21ujpqhhfus7k4iooahro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

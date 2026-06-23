@@ -1,0 +1,21 @@
+import 'package:flutter/material.dart';
+
+class AppBackButton extends StatelessWidget {
+  final VoidCallback? onPressed;
+
+  const AppBackButton({
+    super.key,
+    this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: const Icon(
+        Icons.arrow_forward_ios,
+        size: 18,
+      ),
+      onPressed: onPressed ?? () => Navigator.pop(context),
+    );
+  }
+}
